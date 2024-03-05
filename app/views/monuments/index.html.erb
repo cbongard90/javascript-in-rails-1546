@@ -2,23 +2,28 @@
 
 <h1>Monuments</h1>
 
-<div id="monuments">
-  <% @monuments.each do |monument| %>
-    <%= render monument %>
-    <p>
-      <%= link_to "Show this monument", monument %>
-    </p>
-  <% end %>
-</div>
+<div
+  class="container"
+  data-controller="insert-in-list"
+>
+  <%# List %>
+  <div id="monuments" data-insert-in-list-target="items">
+    <% @monuments.each do |monument| %>
+      <%= render monument %>
+      <p>
+        <%= link_to "Show this monument", monument %>
+      </p>
+    <% end %>
+  </div>
 
-<%= link_to "New monument", new_monument_path %>
-
-<div data-controller="toggle" class="mt-5">
-  <button data-action="toggle#fire" class="btn btn-primary">
-    Add a monument
-  </button>
-  <div data-toggle-target="toggleElement" class="d-none">
-    <%= render "form", monument: @monument %>
+  <%# Form %>
+  <div data-controller="toggle" class="mt-5">
+    <button data-action="toggle#fire" class="btn btn-primary">
+      Add a monument
+    </button>
+    <div data-toggle-target="toggleElement" class="d-none">
+      <%= render "form", monument: @monument %>
+    </div>
   </div>
 </div>
 
