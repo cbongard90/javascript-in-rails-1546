@@ -12,3 +12,10 @@
 </div>
 
 <%= link_to "New monument", new_monument_path %>
+
+<div data-controller="toggle" class="mt-5">
+  <button class="btn btn-primary">
+    Add a monument
+  </button>
+  <%= render "form", monument: @monument %>
+</div>
