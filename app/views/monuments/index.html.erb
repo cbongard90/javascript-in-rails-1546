@@ -21,3 +21,12 @@
     <%= render "form", monument: @monument %>
   </div>
 </div>
+
+<div data-controller="toggle" class="mt-5">
+  <button data-action="toggle#fire" class="btn btn-primary">
+    Say Hello
+  </button>
+  <div data-toggle-target="toggleElement" class="d-none">
+    <p>Hello There</p>
+  </div>
+</div>

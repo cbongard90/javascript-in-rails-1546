@@ -5,10 +5,10 @@ export default class extends Controller {
   static targets = ["toggleElement"]
 
   connect() {
-    console.log(this.toggleElement);
+    console.log(this.toggleElementTarget);
   }
 
   fire() {
-    this.toggleElement.classList.toggle("d-none");
+    this.toggleElementTarget.classList.toggle("d-none");
   }
 }
