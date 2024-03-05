@@ -24,7 +24,13 @@ export default class extends Controller {
     })
       .then(response => response.json())
       .then((data) => {
-        console.log(data);
+        // check if the components are present
+        if (data.inserted_item) {
+          // insert in the list
+          this.itemsTarget.insertAdjacentHTML("beforeend", data.inserted_item)
+        }
+
+        this.formTarget.outerHTML = data.form
       })
 
 
